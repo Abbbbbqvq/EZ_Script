@@ -12,7 +12,7 @@ def crawlergo_run():
             body = str(output)
             t = re.compile('"url":"(.*?)",')
             r = t.findall(body)
-            print(r)
+            #print(r)
             domain = open("./sub_domains.txt", "r", encoding='utf-8')
             for url in r:
                 flag = 0
@@ -32,7 +32,10 @@ def url_to_ez(url):
         'https': 'http://127.0.0.1:2222',
     }
     # 使用代理访问URL
-    response = requests.get(url, proxies=proxies, verify=False)
-    print(response.text)
+    try:
+        response = requests.get(url, proxies=proxies, verify=False)
+        #print(response.text)
+    except requests.exceptions.RequestException as e:
+        print(f'访问 {url} 时发生错误: {e}')
 
 crawlergo_run()
