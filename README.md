@@ -8,7 +8,7 @@
 
 ## 目录展示
 
-![image-20240823200948585](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823200948585.png)
+![image-20240823200948585](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823200948585.png)
 
 targets.txt存放的是url
 
@@ -39,19 +39,19 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 
 启动后默认监听2222端口，如果改过监听端口，需要到脚本里设置对应端口
 
-![image-20240823195843756](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823195843756.png)
+![image-20240823195843756](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823195843756.png)
 
 接着开启靶机[Vulfocus log4j2-rce靶机 | NSSCTF](https://www.nssctf.cn/problem/1125)
 
-![image-20240823200007790](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823200007790.png)
+![image-20240823200007790](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823200007790.png)
 
 将url复制到target.txt文件中，将domain提取出来放到sub_domains.txt中，保存
 
-![image-20240823200140413](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823200140413.png)
+![image-20240823200140413](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823200140413.png)
 
 然后运行脚本即可，稍待片刻，就能扫出漏洞了，当然理想情况是这样的，此脚本还有完善的空间，现只是一个demo版，可以的话大家可以多提供提供思路
 
-![image-20240823202228294](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823202228294.png)
+![image-20240823202228294](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823202228294.png)
 
 
 
@@ -65,11 +65,11 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 
 然后到[M-SEC社区 (nsfocus.com)](https://msec.nsfocus.com/)去注册申请一个使用许可证书文件
 
-![image-20240823191920769](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823191920769.png)
+![image-20240823191920769](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823191920769.png)
 
 将证书文件和ez扫描器拷贝到当前目录下之后
 
-![image-20240823192137597](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823192137597.png)
+![image-20240823192137597](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823192137597.png)
 
 输入命令，如果当前目录没有config.yaml文件，会自动生成config.yaml文件，然后开启本地2222端口监听，到这一步，ez扫描器就能正常使用了。
 
@@ -77,7 +77,7 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 ./ez webscan
 ```
 
-![image-20240823192435078](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823192435078.png)
+![image-20240823192435078](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823192435078.png)
 
 接下载是反连平台搭建[反连平台搭建（外网篇） | EZ (ezreal.cool)](https://docs.ezreal.cool/docs/EZUSE/ez-reverse)
 
@@ -91,11 +91,11 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 
 接下来，就是配置服务器端的ez的config.yaml，ip必须为0.0.0.0，端口随意，token自己最好是设置的复杂一些，长一些，disable要设置为false
 
-![image-20240823193625197](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823193625197.png)
+![image-20240823193625197](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823193625197.png)
 
 设置好这些之后，回到客户端，也就是你自己的电脑，设置你本地的config.yaml，也跟服务器端的差不多，就是ip得设置为你服务器的ip，然后disable得设置为false，token要跟服务器端的一样
 
-![image-20240823193907620](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823193907620.png)
+![image-20240823193907620](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823193907620.png)
 
 设置好这些之后，服务器端运行命令，客户端运行命令
 
@@ -106,11 +106,11 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 
 客户端回显，配置的rmi和ldap正常执行
 
-![image-20240823194529579](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823194529579.png)
+![image-20240823194529579](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823194529579.png)
 
 服务端回显payload
 
-![image-20240823195040550](https://github.com/Abbbbbqvq/EZ_Script/images/image-20240823195040550.png)
+![image-20240823195040550](https://github.com/Abbbbbqvq/EZ_Script/tree/main/images/image-20240823195040550.png)
 
 至此，ez扫描器搭建完成，更多的配置可以参考ez使用文档
 
