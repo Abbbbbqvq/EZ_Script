@@ -1,6 +1,6 @@
 # EZ_Script
 
-配合绿盟ez漏扫的打点脚本，自动化扫描页面中的接口，并探测可能存在的log4j、sql注入、rce等。
+配合绿盟ez漏扫的打点脚本，自动化扫描页面中的接口，并探测可能存在的未授权接口、log4j、sql注入、rce等，可联动burp做进一步被扫。
 
 ## 声明
 
@@ -24,6 +24,8 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 
 [m-sec-org/EZ: EZ是一款集信息收集、端口扫描、服务暴破、URL爬虫、指纹识别、被动扫描为一体的跨平台漏洞扫描器。 (github.com)](https://github.com/m-sec-org/EZ)
 
+https://github.com/winezer0/passive-scan-client-plus
+
 [Abbbbbqvq/Enscan_Script: 快速筛选Enscan输出结果中的domain，让你在红蓝攻防中快人一步 (github.com)](https://github.com/Abbbbbqvq/Enscan_Script)
 
 ## 如何使用
@@ -37,7 +39,7 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 ./ez webscan  #客户端
 ```
 
-启动后默认监听2222端口，如果改过监听端口，需要到脚本里设置对应端口
+Ez启动后默认监听2222端口，如果改过监听端口，需要到脚本里设置对应端口
 
 ![image-20240823195843756](https://github.com/Abbbbbqvq/EZ_Script/blob/main/images/image-20240823195843756.png)
 
@@ -52,6 +54,18 @@ Config.yaml没配置过反连的往下滑，配置反连平台
 然后运行脚本即可，稍待片刻，就能扫出漏洞了，当然理想情况是这样的，此脚本还有完善的空间，现只是一个demo版，可以的话大家可以多提供提供思路
 
 ![image-20240823202228294](https://github.com/Abbbbbqvq/EZ_Script/blob/main/images/image-20240823202228294.png)
+
+## burp联动ez
+
+脚本默认代理端口为2222端口
+
+![image-20240824114741851](https://github.com/Abbbbbqvq/EZ_Script/blob/main/images/image-20240824114741851.png)
+
+可将端口修改为8080，转发到Burp上，然后burp通过插件passive-scan-client转发到ez上(原版或者是plus版都可以，只要能用)
+
+![image-20240824115017696](https://github.com/Abbbbbqvq/EZ_Script/blob/main/images/image-20240824115017696.png)
+
+![image-20240824115129857](https://github.com/Abbbbbqvq/EZ_Script/blob/main/images/image-20240824115129857.png)
 
 
 
