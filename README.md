@@ -133,12 +133,14 @@ Ez启动后默认监听2222端口，如果改过监听端口，需要到脚本�
 [Qianlitp/crawlergo: A powerful browser crawler for web vulnerability scanners (github.com)](https://github.com/Qianlitp/crawlergo)
 
 ## 更新日志
-1、 2024.8.23 创建EZ_Script项目
+1、 2024.8.23 创建EZ_Script项目。
 
-2、 2024.8.24 修复存在的一些问题
+2、 2024.8.24 修复存在的一些问题。
 
 ## 待更新内容
-1、 目前的Burp联动ez只爬取get请求，后续增加post请求
+1、 目前的Burp联动ez只爬取get请求，后续增加post请求。
 
-2、增加爬取url缓存去重，防止不同网页爬取的url相同而导致重复发包
+2、增加爬取url缓存去重，防止不同网页爬取的url相同而导致重复发包。
+
+3、后面打算整合这些需要用到的工具打包到release，嘴对嘴喂给你们吃，这样就不用整环境了。
 
