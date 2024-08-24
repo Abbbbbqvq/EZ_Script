@@ -8,6 +8,7 @@ from urllib3.exceptions import InsecureRequestWarning
 warnings.simplefilter('ignore', InsecureRequestWarning)
 
 black_list = ["网站防火墙"]
+black_path = [".js", ".jsx", ".coffee", ".ts", ".css", ".less", ".sass", ".scss", ".jpg", ".png", ".gif", ".bmp", ".svg", ".svg", ".ttf", ".eot", ".woff", ".woff2", ".ejs", ".jade", ".vue"]
 url_http_cache = set()
 url_https_cache = set()
 
@@ -24,6 +25,14 @@ def crawlergo_run():
             #print(r)
             domain = open("./sub_domains.txt", "r", encoding='utf-8')
             for url in r:
+                no_black_path_flag = 1
+                for check_black_path in black_path:
+                    if check_black_path in url:
+                        no_black_path_flag = 0
+                        break
+                if no_black_path_flag == 0:
+                    print("该路径为资源文件路径，忽略当前url")
+                    continue
                 domain_in_url_flag = 0
                 if domain_in_url_flag != 1:
                     for sub_domain in domain.readlines():
@@ -67,8 +76,8 @@ def crawlergo_run():
 
 def url_to_ez(url):
     proxies = {
-        'http': 'http://127.0.0.1:2222',
-        'https': 'http://127.0.0.1:2222',
+        'http': 'http://127.0.0.1:8080',
+        'https': 'http://127.0.0.1:8080',
     }
     # 使用代理访问URL
     try:
@@ -76,6 +85,7 @@ def url_to_ez(url):
         response = requests.get(url, proxies=proxies, verify=False, timeout=10)
         for i in black_list:
             if i in response.text:
+                print("检测到防火墙，忽略该条url")
                 return 1
         return 0
     except requests.exceptions.RequestException as e:
